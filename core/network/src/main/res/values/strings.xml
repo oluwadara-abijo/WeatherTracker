@@ -4,4 +4,7 @@
     <string name="request_timed_out">Request time out</string>
     <string name="something_went_wrong">Something went wrong</string>
     <string name="server_error">Server error</string>
+    <string name="invalid_location">Invalid location</string>
+    <string name="bad_request_error">Bad request</string>
+    <string name="invalid_api_key">Invalid API key</string>
 </resources>
