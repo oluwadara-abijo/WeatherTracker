@@ -14,4 +14,5 @@ val GreyBackground = Color(0xFFF2F2F2)
 val IconColor = Color(0xFFDADADA)
 val GreyText = Color(0xFFC4C4C4)
 val BlackText = Color(0xFF2C2C2C)
+val SecondaryText = Color(0xFF9A9A9A)
 

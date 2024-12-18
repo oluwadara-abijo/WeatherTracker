@@ -66,8 +66,9 @@ fun HomeScreen(
                             cityName = uiState.weatherData!!.cityName,
                             temperature = uiState.weatherData!!.temperature,
                             icon = uiState.weatherData!!.icon
-                        ) {viewModel.updateSearchMode(false) }
+                        ) { viewModel.toggleSearchMode(false) }
 
+                uiState.shouldShowData -> uiState.weatherData?.let { CityWeatherWidget(it) }
             }
 
         }

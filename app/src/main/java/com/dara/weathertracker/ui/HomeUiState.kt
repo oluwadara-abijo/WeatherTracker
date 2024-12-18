@@ -9,5 +9,6 @@ data class HomeUiState(
     val errorMessage: String? = null,
     val searchInput: String = "",
     val shouldShowCard: Boolean = false,
+    val shouldShowData: Boolean = true,
     val weatherData: WeatherData? = null
 )

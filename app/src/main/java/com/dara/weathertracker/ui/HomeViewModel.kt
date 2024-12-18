@@ -42,8 +42,8 @@ class HomeViewModel @Inject constructor(
         updateState(searchInput = searchInput)
     }
 
-    fun updateSearchMode(shouldShowCard: Boolean) {
-        updateState(shouldShowCard = shouldShowCard)
+    fun toggleSearchMode(shouldShowCard: Boolean) {
+        updateState(shouldShowCard = shouldShowCard, shouldShowData = !shouldShowCard)
     }
 
     // Updates the current state of the UI
@@ -53,6 +53,7 @@ class HomeViewModel @Inject constructor(
         errorMessage: String? = null,
         searchInput: String? = null,
         shouldShowCard: Boolean? = null,
+        shouldShowData: Boolean? = null,
         weatherData: WeatherData? = null
     ) {
         _uiState.value = _uiState.value.copy(
@@ -61,6 +62,7 @@ class HomeViewModel @Inject constructor(
             errorMessage = errorMessage ?: _uiState.value.errorMessage,
             searchInput = searchInput ?: _uiState.value.searchInput,
             shouldShowCard = shouldShowCard ?: _uiState.value.shouldShowCard,
+            shouldShowData = shouldShowData ?: _uiState.value.shouldShowData,
             weatherData = weatherData ?: _uiState.value.weatherData
 
         )
