@@ -30,6 +30,20 @@ internal object CoreNetworkModule {
             okhttp3.logging.HttpLoggingInterceptor()
                 .apply { setLevel(okhttp3.logging.HttpLoggingInterceptor.Level.BODY) })
 
+        builder.addInterceptor { chain ->
+            val originalRequest = chain.request()
+            val originalUrl = originalRequest.url
+
+            val urlWithApiKey = originalUrl.newBuilder()
+                .addQueryParameter("key", API_KEY)
+                .build()
+
+            val newRequest = originalRequest.newBuilder()
+                .url(urlWithApiKey)
+                .build()
+
+            chain.proceed(newRequest)
+        }
         return builder.build()
     }
 
@@ -60,4 +74,5 @@ internal object CoreNetworkModule {
 }
 
 private const val BASE_URL = "https://api.weatherapi.com/v1/"
+private const val API_KEY = "02c9dfd45ec644229c8142315241812"
 private const val NETWORK_TIMEOUT = 30L
