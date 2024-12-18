@@ -49,7 +49,7 @@ fun HomeScreen(
             SearchBarWidget(
                 searchInput = uiState.searchInput,
                 onSearchInputChanged = { viewModel.updateSearchInput(it) },
-                onSearchClicked = { viewModel.getWeatherData(it) })
+                onSearchClicked = { viewModel.getWeatherData(it, true) })
 
             when {
                 uiState.isEmptyState -> EmptyStateWidget()
@@ -66,7 +66,7 @@ fun HomeScreen(
                             cityName = uiState.weatherData!!.cityName,
                             temperature = uiState.weatherData!!.temperature,
                             icon = uiState.weatherData!!.icon
-                        ) { viewModel.toggleSearchMode(false) }
+                        ) { viewModel.toggleSearchMode(true) }
 
                 uiState.shouldShowData -> uiState.weatherData?.let { CityWeatherWidget(it) }
             }
