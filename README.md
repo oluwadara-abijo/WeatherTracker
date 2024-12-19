@@ -11,6 +11,10 @@ This project is an Android weather application built using Kotlin, Jetpack Compo
 * **Clean Architecture:** Follows MVVM architecture with modular and testable code.
 * **Dependency Injection:** Utilizes dependency injection using Hilt for managing dependencies.
 
+
+![WeatherTracker](https://github.com/user-attachments/assets/34874348-b063-4b58-a1f4-68bb3a04cea0)
+
+
 ## Setup Instructions
 
 1. **Clone the repository:**
@@ -48,9 +52,9 @@ This project is an Android weather application built using Kotlin, Jetpack Compo
 
 * Kotlin
 * Jetpack Compose
-* Hilt/Koin (Dependency Injection)
+* Hilt (Dependency Injection)
 * Retrofit (Networking)
-* DataStore/SharedPreferences (Local Storage)
+* DataStore (Local Storage)
 * WeatherAPI.com API
 
 ## Contributing
@@ -59,7 +63,7 @@ Contributions are welcome! Please feel free to open issues or pull requests.
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License
 
 ## Disclaimer
 
