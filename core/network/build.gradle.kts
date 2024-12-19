@@ -1,3 +1,5 @@
+import java.util.Properties
+
 plugins {
     alias(libs.plugins.kotlin.serialization)
     alias(libs.plugins.android.library)
@@ -8,6 +10,19 @@ plugins {
 
 android {
     namespace = "com.dara.core.network"
+
+    defaultConfig {
+        val properties = Properties()
+        val localPropertiesFile = File(rootProject.projectDir, "local.properties")
+        if (localPropertiesFile.exists()) {
+            localPropertiesFile.inputStream().use { inputStream ->
+                properties.load(inputStream)
+            }
+        }
+
+        val apiKey = properties.getProperty("API_KEY") ?: "default_api_key"
+        buildConfigField("String", "API_KEY", "\"$apiKey\"")
+    }
 
     buildFeatures {
         buildConfig = true

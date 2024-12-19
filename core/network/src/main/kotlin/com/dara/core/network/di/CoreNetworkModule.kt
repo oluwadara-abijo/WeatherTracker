@@ -1,5 +1,6 @@
 package com.dara.core.network.di
 
+import com.dara.core.network.BuildConfig
 import com.dara.core.network.WeatherApi
 import com.jakewharton.retrofit2.converter.kotlinx.serialization.asConverterFactory
 import dagger.Module
@@ -74,5 +75,5 @@ internal object CoreNetworkModule {
 }
 
 private const val BASE_URL = "https://api.weatherapi.com/v1/"
-private const val API_KEY = "02c9dfd45ec644229c8142315241812"
+private const val API_KEY = BuildConfig.API_KEY
 private const val NETWORK_TIMEOUT = 30L
